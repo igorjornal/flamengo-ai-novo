@@ -1,218 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Flamengo Text AI</title>
-    <style>
-        body {
-            margin: 0;
-            background: linear-gradient(red, black);
-            color: white;
-            font-family: Arial;
-            padding: 20px;
-        }
-        .header {
-            text-align: center;
-            background: rgba(0,0,0,0.8);
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            color: black;
-            padding: 40px;
-            border-radius: 20px;
-        }
-        .tab {
-            background: red;
-            color: white;
-            padding: 15px 25px;
-            margin: 10px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .tab:hover {
-            background: darkred;
-        }
-        .content {
-            margin-top: 30px;
-            padding: 20px;
-            background: #f5f5f5;
-            border-radius: 10px;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 2px solid red;
-            border-radius: 5px;
-        }
-        .btn {
-            background: red;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .result {
-            margin-top: 20px;
-            padding: 15px;
-            background: #e5f7e5;
-            border-radius: 5px;
-            border-left: 4px solid green;
-        }
-    </style>
+<title>Flamengo Text AI</title>
+<style>
+body{background:linear-gradient(red,black);color:white;font-family:Arial;padding:20px}
+.header{text-align:center;background:rgba(0,0,0,0.8);padding:30px;border-radius:15px;margin-bottom:30px}
+.container{max-width:800px;margin:0 auto;background:white;color:black;padding:40px;border-radius:20px}
+.tab{background:red;color:white;padding:15px 25px;margin:10px;border:none;border-radius:8px;cursor:pointer}
+input,textarea{width:100%;padding:10px;margin:10px 0;border:2px solid red;border-radius:5px}
+.btn{background:red;color:white;padding:12px 30px;border:none;border-radius:5px;cursor:pointer}
+</style>
 </head>
 <body>
-    <div class="header">
-        <h1 style="font-size: 3em; margin-bottom: 15px;">🔴⚫ FLAMENGO TEXT AI ⚫🔴</h1>
-        <h2>🏆 MAIOR DO BRASIL 🏆</h2>
-        <p style="font-size: 1.2em;">Uma vez Flamengo, sempre Flamengo!</p>
-    </div>
-
-    <div class="container">
-        <div style="text-align: center; margin-bottom: 30px;">
-            <button class="tab" onclick="mostrarAba('gerar')">✍️ Gerar Texto</button>
-            <button class="tab" onclick="mostrarAba('reescrever')">🔄 Reescrever</button>
-            <button class="tab" onclick="mostrarAba('noticias')">📰 Notícias</button>
-        </div>
-
-        <div id="gerar" class="content">
-            <h2 style="color: red;">✍️ Geração de Textos sobre o Flamengo</h2>
-            <input type="text" id="tema" placeholder="Digite o tema (ex: Gabigol, próximo jogo, contratações)">
-            <select id="estilo">
-                <option>Jornalístico</option>
-                <option>Torcedor apaixonado</option>
-                <option>Análise técnica</option>
-                <option>Redes sociais</option>
-                <option>Jornalista torcedor</option>
-            </select>
-            <button class="btn" onclick="gerarTexto()">Gerar Texto com IA</button>
-            <div id="resultado-gerar" class="result" style="display:none;"></div>
-        </div>
-
-        <div id="reescrever" class="content" style="display:none;">
-            <h2 style="color: red;">🔄 Reescrita de Textos</h2>
-            <textarea id="texto-original" rows="5" placeholder="Cole aqui o texto que deseja reescrever..."></textarea>
-            <select id="estilo-reescrita">
-                <option>Jornalístico</option>
-                <option>Torcedor apaixonado</option>
-                <option>Análise técnica</option>
-                <option>Redes sociais</option>
-                <option>Jornalista torcedor</option>
-            </select>
-            <button class="btn" onclick="reescreverTexto()">Reescrever com IA</button>
-            <div id="resultado-reescrita" class="result" style="display:none;"></div>
-        </div>
-
-        <div id="noticias" class="content" style="display:none;">
-            <h2 style="color: red;">📰 Busca de Notícias do Flamengo</h2>
-            <input type="text" id="busca" placeholder="Buscar notícias (ex: Gabigol, Libertadores, contratações)">
-            <button class="btn" onclick="buscarNoticias()">Buscar Notícias</button>
-            <div id="resultado-noticias" class="result" style="display:none;"></div>
-        </div>
-    </div>
-
-    <script>
-        function mostrarAba(aba) {
-            document.getElementById('gerar').style.display = 'none';
-            document.getElementById('reescrever').style.display = 'none';
-            document.getElementById('noticias').style.display = 'none';
-            document.getElementById(aba).style.display = 'block';
-        }
-
-        function gerarTexto() {
-            const tema = document.getElementById('tema').value;
-            const estilo = document.getElementById('estilo').value;
-            
-            if (!tema) {
-                alert('Por favor, digite um tema!');
-                return;
-            }
-
-            const resultado = document.getElementById('resultado-gerar');
-            resultado.style.display = 'block';
-            resultado.innerHTML = `
-                <h3>✅ Texto Gerado - Estilo: ${estilo}</h3>
-                <p><strong>Tema:</strong> ${tema}</p>
-                <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 5px;">
-                    <p>🔴⚫ <strong>Flamengo e ${tema}</strong></p>
-                    <p>O Clube de Regatas do Flamengo, conhecido como o Maior do Brasil, continua fazendo história no cenário nacional e internacional. Em relação a ${tema}, o Mengão demonstra mais uma vez por que é o clube mais querido e vitorioso do país.</p>
-                    <p>A Nação Rubro-Negra pode ter orgulho de acompanhar um clube que sempre busca a excelência. O Maracanã, nossa casa, é testemunha das grandes conquistas e momentos emocionantes que só o Flamengo proporciona.</p>
-                    <p><em>Uma vez Flamengo, sempre Flamengo! 🏆</em></p>
-                </div>
-                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">💡 Em breve: Integração com ChatGPT para textos ainda mais personalizados!</p>
-            `;
-        }
-
-        function reescreverTexto() {
-            const texto = document.getElementById('texto-original').value;
-            const estilo = document.getElementById('estilo-reescrita').value;
-            
-            if (!texto) {
-                alert('Por favor, cole um texto para reescrever!');
-                return;
-            }
-
-            const resultado = document.getElementById('resultado-reescrita');
-            resultado.style.display = 'block';
-            resultado.innerHTML = `
-                <h3>✅ Texto Reescrito - Estilo: ${estilo}</h3>
-                <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 5px;">
-                    <p><strong>Versão reescrita no estilo ${estilo}:</strong></p>
-                    <p>${texto.substring(0, 100)}... [texto reescrito com o tom e estilo ${estilo.toLowerCase()}, mantendo o contexto do Flamengo e adaptando para a linguagem específica escolhida]</p>
-                    <p><em>🔴⚫ Sempre com o coração rubro-negro!</em></p>
-                </div>
-                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">💡 Em breve: Reescrita real com IA avançada!</p>
-            `;
-        }
-
-        function buscarNoticias() {
-            const busca = document.getElementById('busca').value;
-            
-            if (!busca) {
-                alert('Por favor, digite um termo para buscar!');
-                return;
-            }
-
-            const resultado = document.getElementById('resultado-noticias');
-            resultado.style.display = 'block';
-            resultado.innerHTML = `
-                <h3>📰 Notícias encontradas: "${busca}"</h3>
-                <div style="margin-top: 15px;">
-                    <div style="padding: 15px; background: white; border-radius: 5px; margin-bottom: 15px;">
-                        <h4 style="color: red;">🔴 Flamengo: ${busca} em destaque no cenário nacional</h4>
-                        <p><strong>Fonte:</strong> Globo Esporte</p>
-                        <p>O Clube de Regatas do Flamengo segue fazendo história com ${busca}. A diretoria rubro-negra trabalha constantemente para manter o clube no topo do futebol brasileiro...</p>
-                        <p><a href="https://ge.globo.com/futebol/times/flamengo/" target="_blank" style="color: red;">📖 Ler matéria completa</a></p>
-                    </div>
-                    
-                    <div style="padding: 15px; background: white; border-radius: 5px; margin-bottom: 15px;">
-                        <h4 style="color: red;">⚫ ${busca}: Flamengo demonstra força no mercado</h4>
-                        <p><strong>Fonte:</strong> LANCE!</p>
-                        <p>O Mengão continua surpreendendo quando o assunto é ${busca}. A Nação Rubro-Negra pode comemorar mais uma vez os avanços do clube...</p>
-                        <p><a href="https://www.lance.com.br/flamengo" target="_blank" style="color: red;">📖 Ler matéria completa</a></p>
-                    </div>
-                    
-                    <div style="padding: 15px; background: white; border-radius: 5px;">
-                        <h4 style="color: red;">🏆 ${busca} no Flamengo: mais uma conquista do Maior do Brasil</h4>
-                        <p><strong>Fonte:</strong> Site Oficial Flamengo</p>
-                        <p>O Clube de Regatas do Flamengo oficializa mais um passo importante relacionado a ${busca}. O Maracanã, casa do Mengão, será palco de grandes emoções...</p>
-                        <p><a href="https://www.flamengo.com.br/" target="_blank" style="color: red;">📖 Ler matéria completa</a></p>
-                    </div>
-                </div>
-                <p style="margin-top: 15px; font-size: 0.9em; color: #666;">💡 Em breve: Busca real em tempo real nos principais sites esportivos!</p>
-            `;
-        }
-
-        // Mostrar primeira aba por padrão
-        mostrarAba('gerar');
-    </script>
+<div class="header">
+<h1>🔴⚫ FLAMENGO TEXT AI ⚫🔴</h1>
+<h2>🏆 MAIOR DO BRASIL 🏆</h2>
+<p>Uma vez Flamengo, sempre Flamengo!</p>
+</div>
+<div class="container">
+<button class="tab" onclick="mostrarAba('gerar')">✍️ Gerar Texto</button>
+<button class="tab" onclick="mostrarAba('reescrever')">🔄 Reescrever</button>
+<button class="tab" onclick="mostrarAba('noticias')">📰 Notícias</button>
+<div id="gerar">
+<h2>✍️ Gerar Texto</h2>
+<input type="text" id="tema" placeholder="Digite o tema">
+<button class="btn" onclick="gerarTexto()">Gerar com ChatGPT</button>
+<div id="resultado-gerar"></div>
+</div>
+<div id="reescrever" style="display:none">
+<h2>🔄 Reescrever</h2>
+<textarea id="texto-original" placeholder="Cole o texto"></textarea>
+<button class="btn" onclick="reescreverTexto()">Reescrever</button>
+<div id="resultado-reescrita"></div>
+</div>
+<div id="noticias" style="display:none">
+<h2>📰 Notícias</h2>
+<input type="text" id="busca" placeholder="Buscar">
+<button class="btn" onclick="buscarNoticias()">Buscar</button>
+<div id="resultado-noticias"></div>
+</div>
+</div>
+<script>
+const API='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';
+function mostrarAba(aba){document.getElementById('gerar').style.display='none';document.getElementById('reescrever').style.display='none';document.getElementById('noticias').style.display='none';document.getElementById(aba).style.display='block';}
+async function chamarGPT(prompt){const response=await fetch('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+API},body:JSON.stringify({model:'gpt-3.5-turbo',messages:[{role:'user',content:prompt}],max_tokens:400})});const data=await response.json();return data.choices[0].message.content;}
+async function gerarTexto(){const tema=document.getElementById('tema').value;if(!tema)return alert('Digite um tema!');document.getElementById('resultado-gerar').innerHTML='Gerando...';try{const texto=await chamarGPT('Escreva sobre Flamengo: '+tema);document.getElementById('resultado-gerar').innerHTML='<div style="background:#f0f0f0;padding:20px;border-radius:10px;margin:10px 0">'+texto+'</div>';}catch(e){document.getElementById('resultado-gerar').innerHTML='Erro!';}}
+async function reescreverTexto(){const texto=document.getElementById('texto-original').value;if(!texto)return alert('Cole um texto!');document.getElementById('resultado-reescrita').innerHTML='Reescrevendo...';try{const reescrito=await chamarGPT('Reescreva: '+texto);document.getElementById('resultado-reescrita').innerHTML='<div style="background:#f0f0f0;padding:20px;border-radius:10px;margin:10px 0">'+reescrito+'</div>';}catch(e){document.getElementById('resultado-reescrita').innerHTML='Erro!';}}
+function buscarNoticias(){const termo=document.getElementById('busca').value;if(!termo)return alert('Digite um termo!');document.getElementById('resultado-noticias').innerHTML='<div style="background:#f0f0f0;padding:20px;border-radius:10px;margin:10px 0;cursor:pointer" onclick="window.open(\'https://www.flamengo.com.br\')"><h3>Flamengo na Libertadores 2025</h3><p>Mengão enfrenta Internacional nas oitavas</p><button onclick="event.stopPropagation();alert(\'Reescrevendo...\')" style="background:green;color:white;padding:5px 10px;border:none;border-radius:5px">✍️ Reescrever</button></div>';}
+</script>
 </body>
 </html>
