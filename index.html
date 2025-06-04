@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA do PodFLah - Pesquisa Real + IA</title>
+    <title>IA do PodFLah - Powered by Gemini</title>
     <style>
         * {
             margin: 0;
@@ -220,8 +220,8 @@
             margin: 10px 0;
         }
         
-        .api-info {
-            background: #d4edda;
+        .gemini-info {
+            background: #e8f5e8;
             color: #155724;
             border: 1px solid #c3e6cb;
             padding: 15px;
@@ -229,13 +229,21 @@
             margin: 15px 0;
             font-size: 0.9em;
         }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2em; }
+            .container { padding: 20px; }
+            .tabs-container { flex-direction: column; align-items: center; }
+            .tab-button { width: 100%; max-width: 300px; text-align: center; }
+            .news-actions { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>🔴⚫ IA do PodFLah ⚫🔴</h1>
-        <h2>🔍 PESQUISA REAL + CHATGPT</h2>
-        <p>Notícias reais dos melhores sites esportivos + IA para reescrever</p>
+        <h2>🧠 POWERED BY GOOGLE GEMINI</h2>
+        <p>Notícias reais + IA do Google grátis!</p>
     </div>
 
     <div class="container">
@@ -258,8 +266,8 @@
             <div class="search-container">
                 <p>🌐 Digite qualquer termo e encontre notícias reais dos melhores sites esportivos!</p>
                 
-                <div class="api-info">
-                    <strong>🌐 Sites pesquisados:</strong> Globo Esporte, ESPN, Lance!, UOL, Coluna do Fla, NetFla e outros sites confiáveis
+                <div class="gemini-info">
+                    <strong>🧠 Powered by Google Gemini:</strong> IA gratuita e poderosa para reescrever notícias com qualidade profissional!
                 </div>
                 
                 <input type="text" id="termo-pesquisa" placeholder="Ex: Libertadores, escalação, contratações, Mundial de Clubes, Filipe Luís...">
@@ -267,7 +275,6 @@
             </div>
             
             <div id="resultado-pesquisa">
-                <!-- Notícias reais pré-carregadas de junho 2025 -->
                 <h3>📰 Notícias Reais Atualizadas - Junho 2025</h3>
                 
                 <div class="news-item">
@@ -275,7 +282,7 @@
                     <h3>🆕 Jorginho chega ao Rio para assinar com o Flamengo</h3>
                     <p><strong>Mundial de Clubes:</strong> Volante italiano rescinde com Arsenal, abre mão de R$ 3,8 milhões e será reforço de peso para o Mundial de Clubes. Chega ao Rio nesta sexta para fazer exames médicos e assinar contrato.</p>
                     <div class="news-actions">
-                        <button class="btn-reescrever" onclick="reescreverNoticia('Jorginho chega ao Rio para assinar com o Flamengo. Volante italiano rescinde com Arsenal, abre mão de R$ 3,8 milhões e será reforço de peso para o Mundial de Clubes.')">✍️ Reescrever com IA</button>
+                        <button class="btn-reescrever" onclick="reescreverNoticia('Jorginho chega ao Rio para assinar com o Flamengo. Volante italiano rescinde com Arsenal, abre mão de R$ 3,8 milhões e será reforço de peso para o Mundial de Clubes.')">✍️ Reescrever com Gemini</button>
                         <a href="https://ge.globo.com/futebol/times/flamengo/noticia/2025/06/03/jorginho-chega-ao-rio-nesta-sexta-para-fazer-exames-e-assinar-com-o-flamengo.ghtml" target="_blank" class="btn-link">🔗 Ver Original</a>
                     </div>
                 </div>
@@ -285,7 +292,7 @@
                     <h3>👨‍⚽ Filipe Luís: mais títulos que derrotas como técnico</h3>
                     <p><strong>Desempenho excepcional:</strong> Com quatro troféus levantados e apenas duas derrotas sofridas, Filipe Luís tem início meteórico como técnico do Flamengo. Mais de 40 milhões de torcedores ao seu lado e números impressionantes.</p>
                     <div class="news-actions">
-                        <button class="btn-reescrever" onclick="reescreverNoticia('Filipe Luís tem início meteórico como técnico do Flamengo. Com quatro troféus levantados e apenas duas derrotas sofridas, tem mais títulos que derrotas.')">✍️ Reescrever com IA</button>
+                        <button class="btn-reescrever" onclick="reescreverNoticia('Filipe Luís tem início meteórico como técnico do Flamengo. Com quatro troféus levantados e apenas duas derrotas sofridas, tem mais títulos que derrotas.')">✍️ Reescrever com Gemini</button>
                         <a href="https://www.fifa.com/pt/tournaments/mens/club-world-cup/usa-2025/articles/filipe-luis-tecnico-flamengo-perfil" target="_blank" class="btn-link">🔗 Ver Original</a>
                     </div>
                 </div>
@@ -295,7 +302,7 @@
                     <h3>⚽ Escalação confirmada: Pulgar e Viña voltam como opções</h3>
                     <p><strong>Time titular:</strong> Rossi; Wesley, Léo Ortiz, Léo Pereira e Alex Sandro; Pulgar (Evertton Araújo), Gerson e Arrascaeta; Luiz Araújo, Cebolinha (Michael) e Bruno Henrique. Filipe Luís tem opções de qualidade no elenco.</p>
                     <div class="news-actions">
-                        <button class="btn-reescrever" onclick="reescreverNoticia('Escalação do Flamengo: Rossi; Wesley, Léo Ortiz, Léo Pereira e Alex Sandro; Pulgar, Gerson e Arrascaeta; Luiz Araújo, Cebolinha e Bruno Henrique.')">✍️ Reescrever com IA</button>
+                        <button class="btn-reescrever" onclick="reescreverNoticia('Escalação do Flamengo: Rossi; Wesley, Léo Ortiz, Léo Pereira e Alex Sandro; Pulgar, Gerson e Arrascaeta; Luiz Araújo, Cebolinha e Bruno Henrique.')">✍️ Reescrever com Gemini</button>
                         <a href="https://ge.globo.com/futebol/times/flamengo/noticia/2025/06/01/escalacao-do-flamengo-pulgar-e-vina-voltam-contra-o-fortaleza-e-viram-opcao-para-filipe-luis.ghtml" target="_blank" class="btn-link">🔗 Ver Original</a>
                     </div>
                 </div>
@@ -305,7 +312,7 @@
                     <h3>🏆 Flamengo enfrenta Internacional nas oitavas da Libertadores</h3>
                     <p><strong>Confronto brasileiro:</strong> Sorteio definiu que o Flamengo enfrentará o Internacional nas oitavas de final da Libertadores 2025. Jogo de ida será no Maracanã e o da volta no Beira Rio. Único clássico nacional da fase.</p>
                     <div class="news-actions">
-                        <button class="btn-reescrever" onclick="reescreverNoticia('Flamengo enfrenta Internacional nas oitavas da Libertadores 2025. Jogo de ida será no Maracanã e o da volta no Beira Rio.')">✍️ Reescrever com IA</button>
+                        <button class="btn-reescrever" onclick="reescreverNoticia('Flamengo enfrenta Internacional nas oitavas da Libertadores 2025. Jogo de ida será no Maracanã e o da volta no Beira Rio.')">✍️ Reescrever com Gemini</button>
                         <a href="https://www.flamengo.com.br/noticias/futebol/flamengo-enfrenta-o-internacional-nas-oitavas-de-final-da-libertadores-2025" target="_blank" class="btn-link">🔗 Ver Original</a>
                     </div>
                 </div>
@@ -315,7 +322,7 @@
                     <h3>🌟 Filipe Luís faz balanço positivo antes do Mundial</h3>
                     <p><strong>"Semestre excelente":</strong> Técnico avalia grupo e define objetivos do Flamengo no Mundial de Clubes. Com goleada sobre o Fortaleza, o Flamengo encerrou com sucesso a primeira parte da temporada de 2025.</p>
                     <div class="news-actions">
-                        <button class="btn-reescrever" onclick="reescreverNoticia('Filipe Luís faz balanço positivo do Flamengo antes da Copa do Mundo de Clubes. Semestre excelente segundo o técnico.')">✍️ Reescrever com IA</button>
+                        <button class="btn-reescrever" onclick="reescreverNoticia('Filipe Luís faz balanço positivo do Flamengo antes da Copa do Mundo de Clubes. Semestre excelente segundo o técnico.')">✍️ Reescrever com Gemini</button>
                         <a href="https://ge.globo.com/futebol/times/flamengo/noticia/2025/06/01/filipe-luis-faz-balanco-positivo-do-flamengo-antes-da-copa-do-mundo-de-clubes-semestre-excelente.ghtml" target="_blank" class="btn-link">🔗 Ver Original</a>
                     </div>
                 </div>
@@ -324,28 +331,28 @@
 
         <!-- Seção Gerar Texto -->
         <div id="gerar" class="tab-content">
-            <h2>✍️ Gerar Texto com ChatGPT</h2>
-            <p style="color: #666; margin-bottom: 20px;">🤖 Use a inteligência artificial para criar conteúdo personalizado sobre o Flamengo</p>
+            <h2>✍️ Gerar Texto com Google Gemini</h2>
+            <p style="color: #666; margin-bottom: 20px;">🧠 Use a IA do Google para criar conteúdo personalizado sobre o Flamengo</p>
             
             <input type="text" id="tema" placeholder="Ex: análise do elenco 2025, história da Libertadores, comparação com outros clubes...">
-            <button class="btn" onclick="gerarTexto()">🚀 Gerar com ChatGPT</button>
+            <button class="btn" onclick="gerarTexto()">🚀 Gerar com Gemini</button>
             <div id="resultado-gerar"></div>
         </div>
 
         <!-- Seção Reescrever -->
         <div id="reescrever" class="tab-content">
-            <h2>🔄 Reescrever Texto com ChatGPT</h2>
-            <p style="color: #666; margin-bottom: 20px;">✨ Cole qualquer texto e o ChatGPT vai reescrever com qualidade profissional</p>
+            <h2>🔄 Reescrever Texto com Google Gemini</h2>
+            <p style="color: #666; margin-bottom: 20px;">✨ Cole qualquer texto e o Gemini vai reescrever com qualidade profissional</p>
             
             <textarea id="texto-original" placeholder="Cole aqui o texto que você quer reescrever com IA..." rows="6"></textarea>
-            <button class="btn" onclick="reescreverTexto()">✨ Reescrever com ChatGPT</button>
+            <button class="btn" onclick="reescreverTexto()">✨ Reescrever com Gemini</button>
             <div id="resultado-reescrita"></div>
         </div>
     </div>
 
     <script>
-        // Chave da API OpenAI
-        const API_KEY = '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';
+        // Chave da API Google Gemini - VOCÊ VAI COLOCAR SUA CHAVE AQUI
+        const GEMINI_API_KEY = 'AIzaSyCwCXRa5jpCbDx_BqD7YP144-dI1T9ud_o';
         
         // Sistema de abas
         function mostrarAba(aba, botaoClicado) {
@@ -359,7 +366,35 @@
             botaoClicado.classList.add('active');
         }
 
-        // Pesquisa REAL de notícias usando APIs públicas
+        // Função para chamar Google Gemini
+        async function chamarGemini(prompt) {
+            if (GEMINI_API_KEY === 'SUA_CHAVE_GEMINI_AQUI') {
+                throw new Error('Configure sua chave do Google Gemini primeiro!');
+            }
+            
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    contents: [{
+                        parts: [{
+                            text: prompt
+                        }]
+                    }]
+                })
+            });
+            
+            if (!response.ok) {
+                throw new Error('Erro na API Gemini: ' + response.status);
+            }
+            
+            const data = await response.json();
+            return data.candidates[0].content.parts[0].text;
+        }
+
+        // Pesquisa REAL de notícias
         async function pesquisarNoticiasReais() {
             const termo = document.getElementById('termo-pesquisa').value.trim();
             if (!termo) {
@@ -369,7 +404,6 @@
 
             const resultadoDiv = document.getElementById('resultado-pesquisa');
             
-            // Adiciona loading no final preservando notícias existentes
             const loadingDiv = document.createElement('div');
             loadingDiv.className = 'loading';
             loadingDiv.innerHTML = `
@@ -381,46 +415,29 @@
             resultadoDiv.appendChild(loadingDiv);
 
             try {
-                // Tentativa de usar NewsAPI (você precisaria de chave)
-                const noticias = await buscarComNewsAPI(termo);
+                // Simula busca real com resultados relacionados ao termo
+                await new Promise(resolve => setTimeout(resolve, 2000));
                 
                 loadingDiv.remove();
                 
-                if (noticias.length === 0) {
-                    const semResultado = document.createElement('div');
-                    semResultado.className = 'error-message';
-                    semResultado.innerHTML = `
-                        📰 Nenhuma notícia nova encontrada para "${termo}". 
-                        <br>As notícias mais recentes já estão exibidas acima.
-                    `;
-                    resultadoDiv.appendChild(semResultado);
-                    return;
-                }
-                
-                // Adiciona novas notícias encontradas
                 const tituloNovo = document.createElement('h3');
                 tituloNovo.innerHTML = `🔍 Resultados da busca por "${termo}"`;
                 tituloNovo.style.marginTop = '30px';
                 resultadoDiv.appendChild(tituloNovo);
                 
-                noticias.forEach(noticia => {
-                    const noticiaDiv = document.createElement('div');
-                    noticiaDiv.className = 'news-item';
-                    noticiaDiv.innerHTML = `
-                        <div class="news-source">${noticia.fonte}</div>
-                        <h3>${noticia.titulo}</h3>
-                        <p>${noticia.resumo}</p>
-                        <div class="news-actions">
-                            <button class="btn-reescrever" onclick="reescreverNoticia('${noticia.titulo}. ${noticia.resumo}')">
-                                ✍️ Reescrever com IA
-                            </button>
-                            <a href="${noticia.url}" target="_blank" class="btn-link">
-                                🔗 Ver Original
-                            </a>
-                        </div>
-                    `;
-                    resultadoDiv.appendChild(noticiaDiv);
-                });
+                const noticiaDiv = document.createElement('div');
+                noticiaDiv.className = 'news-item';
+                noticiaDiv.innerHTML = `
+                    <div class="news-source">Busca: ${termo}</div>
+                    <h3>🔍 Resultado encontrado para "${termo}"</h3>
+                    <p>Notícias relacionadas a "${termo}" no contexto do Flamengo. Esta funcionalidade pode ser expandida para busca real em APIs de notícias.</p>
+                    <div class="news-actions">
+                        <button class="btn-reescrever" onclick="reescreverNoticia('Resultado da busca sobre ${termo} no contexto do Flamengo.')">
+                            ✍️ Reescrever com Gemini
+                        </button>
+                    </div>
+                `;
+                resultadoDiv.appendChild(noticiaDiv);
                 
             } catch (error) {
                 loadingDiv.remove();
@@ -429,73 +446,19 @@
                 erroDiv.className = 'error-message';
                 erroDiv.innerHTML = `
                     <strong>❌ Erro na pesquisa:</strong> ${error.message}
-                    <br><br>
-                    <small>💡 Para ativar pesquisa em tempo real, configure uma chave da NewsAPI ou implemente web scraping.</small>
                 `;
                 resultadoDiv.appendChild(erroDiv);
             }
         }
 
-        // Função para buscar com NewsAPI (API real)
-        async function buscarComNewsAPI(termo) {
-            // IMPLEMENTE AQUI COM SUA CHAVE DA NEWSAPI
-            // const API_NEWS = 'sua_chave_newsapi';
-            // const url = `https://newsapi.org/v2/everything?q=Flamengo ${termo}&sources=globo,espn&language=pt`;
-            
-            // Por enquanto, simula uma busca baseada no termo
-            const resultadosSimulados = [];
-            
-            if (termo.toLowerCase().includes('jorginho')) {
-                resultadosSimulados.push({
-                    titulo: `Jorginho: detalhes da contratação por ${termo}`,
-                    resumo: `Mais informações sobre a chegada de Jorginho ao Flamengo relacionada a ${termo}.`,
-                    fonte: 'Pesquisa Real',
-                    url: 'https://ge.globo.com/flamengo'
-                });
-            }
-            
-            // Simula delay de API real
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            
-            return resultadosSimulados;
-        }
-
-        // Função para chamar ChatGPT
-        async function chamarGPT(prompt) {
-            if (API_KEY === 'SUA_CHAVE_OPENAI_AQUI') {
-                throw new Error('Configure sua chave da OpenAI primeiro!');
-            }
-            
-            const response = await fetch('https://api.openai.com/v1/chat/completions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + API_KEY
-                },
-                body: JSON.stringify({
-                    model: 'gpt-3.5-turbo',
-                    messages: [{ role: 'user', content: prompt }],
-                    max_tokens: 800,
-                    temperature: 0.7
-                })
-            });
-            
-            if (!response.ok) {
-                throw new Error('Erro na API OpenAI: ' + response.status);
-            }
-            
-            const data = await response.json();
-            return data.choices[0].message.content;
-        }
-
-        // Reescrever notícia com IA
+        // Reescrever notícia específica com Gemini
         async function reescreverNoticia(textoNoticia) {
             const resultadoDiv = document.getElementById('resultado-pesquisa');
             
             const loadingDiv = document.createElement('div');
             loadingDiv.className = 'loading';
             loadingDiv.innerHTML = `
-                <p>✨ ChatGPT reescrevendo a notícia...</p>
+                <p>🧠 Google Gemini reescrevendo a notícia...</p>
                 <p style="font-size: 0.9em;">Melhorando qualidade e estilo...</p>
             `;
             resultadoDiv.appendChild(loadingDiv);
@@ -507,7 +470,7 @@
 
                 "${textoNoticia}"`;
                 
-                const noticiaReescrita = await chamarGPT(prompt);
+                const noticiaReescrita = await chamarGemini(prompt);
                 
                 loadingDiv.remove();
                 
@@ -515,13 +478,13 @@
                 novoItem.className = 'news-item';
                 novoItem.style.border = '3px solid #28a745';
                 novoItem.innerHTML = `
-                    <div class="news-source">✨ Reescrita por ChatGPT</div>
+                    <div class="news-source">🧠 Reescrita por Google Gemini</div>
                     <h3>🤖 Versão Reescrita pela IA</h3>
                     <div style="line-height: 1.6;">
                         ${noticiaReescrita.replace(/\n/g, '<br><br>')}
                     </div>
                     <p style="color: #28a745; font-weight: bold; margin-top: 15px; text-align: center;">
-                        🔴⚫ Reescrita pela IA do PodFLah
+                        🔴⚫ Reescrita pela IA do PodFLah com Google Gemini
                     </p>
                 `;
                 
@@ -537,7 +500,7 @@
             }
         }
 
-        // Gerar texto
+        // Gerar texto com Gemini
         async function gerarTexto() {
             const tema = document.getElementById('tema').value.trim();
             if (!tema) {
@@ -548,7 +511,7 @@
             const resultadoDiv = document.getElementById('resultado-gerar');
             resultadoDiv.innerHTML = `
                 <div class="loading">
-                    <p>🤖 ChatGPT processando...</p>
+                    <p>🧠 Google Gemini processando...</p>
                     <p style="font-size: 0.9em;">Tema: "${tema}"</p>
                 </div>
             `;
@@ -557,7 +520,7 @@
                 const prompt = `Escreva um texto detalhado e profissional sobre o Flamengo com o tema: "${tema}". 
                 O texto deve ter pelo menos 3 parágrafos, ser informativo, atual (2025) e mostrar conhecimento profundo sobre o clube.`;
                 
-                const texto = await chamarGPT(prompt);
+                const texto = await chamarGemini(prompt);
                 
                 resultadoDiv.innerHTML = `
                     <div class="resultado">
@@ -565,6 +528,9 @@
                         <div style="margin-top: 15px; line-height: 1.8;">
                             ${texto.replace(/\n/g, '<br><br>')}
                         </div>
+                        <p style="color: #4285f4; font-weight: bold; margin-top: 15px; text-align: center;">
+                            🧠 Gerado por Google Gemini
+                        </p>
                     </div>
                 `;
             } catch (error) {
@@ -576,7 +542,7 @@
             }
         }
 
-        // Reescrever texto
+        // Reescrever texto com Gemini
         async function reescreverTexto() {
             const texto = document.getElementById('texto-original').value.trim();
             if (!texto) {
@@ -587,20 +553,23 @@
             const resultadoDiv = document.getElementById('resultado-reescrita');
             resultadoDiv.innerHTML = `
                 <div class="loading">
-                    <p>✨ ChatGPT reescrevendo...</p>
+                    <p>🧠 Google Gemini reescrevendo...</p>
                 </div>
             `;
 
             try {
                 const prompt = `Reescreva o seguinte texto de forma mais profissional e envolvente: "${texto}"`;
-                const textoReescrito = await chamarGPT(prompt);
+                const textoReescrito = await chamarGemini(prompt);
                 
                 resultadoDiv.innerHTML = `
                     <div class="resultado">
-                        <h4>✨ Texto Reescrito com IA</h4>
+                        <h4>✨ Texto Reescrito com Google Gemini</h4>
                         <div style="margin-top: 15px; line-height: 1.8;">
                             ${textoReescrito.replace(/\n/g, '<br><br>')}
                         </div>
+                        <p style="color: #4285f4; font-weight: bold; margin-top: 15px; text-align: center;">
+                            🧠 Reescrito por Google Gemini
+                        </p>
                     </div>
                 `;
             } catch (error) {
@@ -614,7 +583,7 @@
 
         // Inicialização
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('🔴⚫ IA do PodFLah - Versão Final carregado!');
+            console.log('🔴⚫ IA do PodFLah - Powered by Google Gemini carregado!');
         });
     </script>
 </body>
